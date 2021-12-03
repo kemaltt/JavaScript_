@@ -180,13 +180,13 @@ on new line`)
 
 // Conditionals--------------------------------
 
-const currentAge = 15;
+// const currentAge = 15;
 
-if (currentAge >= 18) {
-    console.log("You can drive legally");
-} else {
-    console.log("You are not to drive")
-}
+// if (currentAge >= 18) {
+//     console.log("You can drive legally");
+// } else {
+//     console.log("You are not to drive")
+// }
 // -----------------------------------
 
 // const birthYear = 2001;
@@ -214,3 +214,204 @@ if (birthYear >= 2000) {
 }
 
 console.log(generation);
+
+// -----------------------------------
+
+let grade = 80
+
+if (grade >= 90) {
+
+    let not = "AA"
+
+    console.log(not);
+
+} else if (grade <= 80) {
+
+    let not = "BA"
+    console.log(not);
+} else {
+
+    let not = "BB"
+    console.log(not);
+}
+
+// TYPE CONVERSION AND TYPE COERCION-----------------------------
+
+console.log(typeof "18");
+console.log(typeof Number("18"));
+console.log(typeof String(18));
+
+console.log(Number("Gamze")); // NaN yazar
+
+let num = "5"
+
+let mul = "5" * 2
+console.log(mul); // 10 yazar
+
+let divide = 10 / num
+
+console.log(divide); // 2 yazar
+
+let minus = num - 1;
+
+console.log(minus); // 4 yazar
+
+let add = num + 5;
+
+console.log(add); // 55 string olarak yazar  burada dönüşüm yapmalıyız
+
+let add1 = 5 + Number(num);
+console.log(add1); // 10 yazar
+
+
+let a = "1"
+a += 1 // 11 string yazar
+a -= 1 // 10 number
+
+console.log(a);
+
+
+
+
+
+/// TRUTHY AND FALSY VALUES 
+
+/**
+ * There are 5 falsy values
+ * 0
+ * ""
+ * undefined
+ * null
+ * Nan
+ */
+
+let cash = 0;
+
+if (cash) {
+    console.log("Find a job")
+}
+// If you write one line code u don't have to use curly braces
+// if(cash == 0) console.log("No jobs found")
+
+// 4- Mantıksal Oper
+
+//&& (And)
+// true && true => true
+// true && false => false
+// false && false => false
+
+
+
+
+
+//|| (or)
+// true || true => true
+// true || false => true
+// false || false => false
+
+
+
+// ! (not) 
+// !true => false
+// !false=> true
+/** 
+ * AND OPERATOR
+    const a = have license (true)
+    const b = bigger than 18 (true)
+
+    a && b = can drive (true)
+    !a && b = cannot drive (false)
+    a && !b = cannot drive (false)
+    !a && !b = cannot drive(false)
+ */
+
+/** 
+ * OR OPERATOR 
+    const x = bigger than 65 
+    const y = chronic disease 
+
+    x || y = risky (true)
+    !x || y = risky (true)
+    x || !y = risky (true)
+    !x || !y = not risky (false)
+ */
+
+// SWITCH STATEMENT --------------------------------------------------
+
+// switch(expression){
+//     case x:
+//         code block
+//         break
+//     case y:
+//         code block
+//         break
+//     case z:
+//         code block
+//         break
+//     case m:
+//         code block
+//         break
+//     case n:
+//         code block
+//         break
+// }
+
+let day = "saturday"
+
+//if(day == "saturday" || day == "sunday")
+
+switch (day) {
+    case "monday":
+        console.log("There is not class, ypu can practice")
+        break
+    case "tuesday":
+        console.log("CSS")
+        break
+    case "wednesday":
+        console.log("Js")
+        break
+    case "thursday":
+        console.log("no class")
+        break
+    case "friday":
+        console.log("CSS")
+        break
+    default:
+        console.log("holiday")
+        break
+        // case "saturday":
+        // case "sunday":
+        //     console.log("holiday")
+        //     break
+}
+
+
+// TERNARY OPERATOR
+const gradeX = 50
+
+// if(gradeX >= 60){
+//     console.log("Passed")
+// }else{
+//     console.log("Failed")
+// }
+
+gradeX >= 60 ? console.log("Passed") : console.log("Failed")
+
+const weather = "cold"
+
+const season = weather === "hot" ? "summer" : "winter"
+
+console.log("season: ", season)
+
+// NULLISH COALESCING
+
+//const val = "xyz"
+const val = undefined
+
+const value = val ? ? "Ahmet"
+
+console.log("values ", value)
+
+console.log(0 || "Ahmet")
+
+console.log("Ahmet" && undefined && 2)
