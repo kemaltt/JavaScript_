@@ -14,7 +14,7 @@
 // email = 'wer@gmail.com'
 
 // console.log(email);
-// hata verir 
+// hata verir
 //  -------------------------------------------------------------------------
 // a = 8, b=3 yazdırma-----------------------------
 // let a = 3;
@@ -24,13 +24,11 @@
 // a = b;
 // b = c;
 
-
 // console.log(a, b);
 
 // // ----------------------------------------------------
 // // ----------Data Types-----------------------------------
 // // -------1-String-----------------
-
 
 // let name = "Orhan"
 // console.log(typeof name);
@@ -55,8 +53,6 @@
 // // ---------------5.null--------
 // let email = null
 // console.log(email);
-
-
 
 // ----------------------------BASIC OPERATORS----------------------------------------------------
 
@@ -95,13 +91,11 @@
 // console.log(ab, xy);
 // çıktı 2,2
 
-
 // let abc = 3;
 // let xyz = abc--
 
 //     console.log(xyz, abc);
 // çıktı 3,2
-
 
 // String birleştirme---------------------------------
 
@@ -133,8 +127,6 @@
 // y += 4
 // console.log(y);
 // // çıktı 9
-
-
 
 // Comparison ---karşılaştırma operatorler---------------
 
@@ -176,7 +168,6 @@
 
 // console.log(`I want to write this \n\
 // on new line`)
-
 
 // Conditionals--------------------------------
 
@@ -263,18 +254,13 @@
 // let add1 = 5 + Number(num);
 // console.log(add1); // 10 yazar
 
-
 // let a = "1"
 // a += 1 // 11 string yazar
 // a -= 1 // 10 number
 
 // console.log(a);
 
-
-
-
-
-/// TRUTHY AND FALSY VALUES 
+/// TRUTHY AND FALSY VALUES
 
 /**
  * There are 5 falsy values
@@ -300,18 +286,12 @@
 // true && false => false
 // false && false => false
 
-
-
-
-
 //|| (or)
 // true || true => true
 // true || false => true
 // false || false => false
 
-
-
-// ! (not) 
+// ! (not)
 // !true => false
 // !false=> true
 /** 
@@ -356,38 +336,37 @@
 //         break
 // }
 
-let day = "saturday"
+let day = "saturday";
 
 //if(day == "saturday" || day == "sunday")
 
 switch (day) {
     case "monday":
-        console.log("There is not class, ypu can practice")
-        break
+        console.log("There is not class, ypu can practice");
+        break;
     case "tuesday":
-        console.log("CSS")
-        break
+        console.log("CSS");
+        break;
     case "wednesday":
-        console.log("Js")
-        break
+        console.log("Js");
+        break;
     case "thursday":
-        console.log("no class")
-        break
+        console.log("no class");
+        break;
     case "friday":
-        console.log("CSS")
-        break
+        console.log("CSS");
+        break;
     default:
-        console.log("holiday")
-        break
+        console.log("holiday");
+        break;
         // case "saturday":
         // case "sunday":
         //     console.log("holiday")
         //     break
 }
 
-
 // TERNARY OPERATOR
-const gradeX = 50
+const gradeX = 50;
 
 // if(gradeX >= 60){
 //     console.log("Passed")
@@ -395,13 +374,13 @@ const gradeX = 50
 //     console.log("Failed")
 // }
 
-gradeX >= 60 ? console.log("Passed") : console.log("Failed")
+gradeX >= 60 ? console.log("Passed") : console.log("Failed");
 
-const weather = "cold"
+const weather = "cold";
 
-const season = weather === "hot" ? "summer" : "winter"
+const season = weather === "hot" ? "summer" : "winter";
 
-console.log("season: ", season)
+console.log("season: ", season);
 
 // NULLISH COALESCING
 
@@ -432,7 +411,6 @@ Test data:
 § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123 
 § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 */
-
 
 // 1-§ Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110-----------------------------------
 // let comAvrdolp, comAvrkoal, scoreDolp1, scoreDolp2, scoreDolp3, scoreKoal1, scoreKoal2, scoreKoal3, avrDolp, avrKoal;
@@ -469,8 +447,6 @@ Test data:
 // avrDolp = (scoreDolp1 + scoreDolp2 + scoreDolp3) / 3;
 // comAvrdolp = avrDolp.toFixed(1);
 
-
-
 // scoreKoal1 = 109;
 // scoreKoal2 = 95;
 // scoreKoal3 = 123;
@@ -489,8 +465,6 @@ Test data:
 
 // The winning Koala team!, Score:109.0
 
-
-
 // 3-§ Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106------------------------
 
 // let scoreDolp1, scoreDolp2, scoreDolp3, scoreKoal1, scoreKoal2, scoreKoal3, avrDolp, avrKoal;
@@ -500,8 +474,6 @@ Test data:
 // scoreDolp3 = 101;
 
 // avrDolp = (scoreDolp1 + scoreDolp2 + scoreDolp3) / 3;
-
-
 
 // scoreKoal1 = 109;
 // scoreKoal2 = 95;
@@ -520,9 +492,8 @@ Test data:
 
 // ---------------------------------------------------------------------------------------------------
 
-
 // Take inputs from the user (the day and the time)  and return output whether is open or closed.
-// Open -> Monday to Friday, 10-21 
+// Open -> Monday to Friday, 10-21
 // Close -> all weekend
 
 // const tag = prompt("Geben Sie den Tag");
@@ -531,9 +502,7 @@ Test data:
 
 // if (tag != "Montag" && tag != "Dienstag" && tag != "Mittwoch" && tag != "Donnerstag" && tag != "Freitag" && tag != "Samstag" && tag != "Sonntag") {
 //     alert('Geben Sie richtigen Tagsname')
-// }
-
-// if (uhr >= 10 && uhr <= 22) {
+// } else if (uhr >= 10 && uhr <= 22) {
 //     switch (tag) {
 //         case ("Montag"):
 //             console.log("von 10 Uhr bis 22 Uhr geöffnet")
@@ -564,7 +533,6 @@ Test data:
 //     console.log("Geschlossen")
 // }
 
-
 // // Q1
 
 // const avgDolphins = (96 + 108 + 89) / 3
@@ -589,10 +557,10 @@ Test data:
 //     console.log("Winner is Dolphins")
 
 // }else if(avgKoalas2 > avgDolphins2 && avgKoalas2 >=100){
-//     console.log("Winner Koalas")
+//     console.log("Winner is Koalas")
 // }
 
-// // Q3 
+// // Q3
 
 // const avgDolphins3 = (97 + 112 + 101) / 3
 // const avgKoalas3 = (109+ 95 + 106) / 3
@@ -603,33 +571,29 @@ Test data:
 //     console.log("Winner is Dolphins")
 
 // }else if(avgKoalas3 > avgDolphins3 && avgKoalas3 >=100){
-//     console.log("Winner Koalas")
+//     console.log("Winner is Koalas")
 // }else if (avgKoalas3 == avgDolphins3 && avgKoalas3 >= 100 && avgDolphins3 >= 100){
 //     console.log("This is draw")
 // }else {
 //     console.log("There is no winner")
 // }
 
-
 // // Take inputs from the user (the day and the time)  and return output whether is open or closed.
-// // Open -> Monday to Friday, 10-21 
+// // Open -> Monday to Friday, 10-21
 // // Close -> all weekend
 
 // const day = prompt("Enter the day: ")
-// const time = prompt ("Enter the time: ")
+// const time = prompt("Enter the time: ")
 
-// if (day != "Monday" && day != "Tuesday" && day!= "Wednesday" && day !="Thursday" && day != "Friday" && day != "Saturday" &&  day != "Sunday"){
+// if (day != "Monday" && day != "Tuesday" && day != "Wednesday" && day != "Thursday" && day != "Friday" && day != "Saturday" && day != "Sunday") {
 //     alert("Please enter valid day")
-// }else {
-//     if ( (day != "Saturday" && day != "Sunday") &&  (time >= 10 && time < 21) ){
+// } else {
+//     if ((day != "Saturday" && day != "Sunday") && (time >= 10 && time < 21)) {
 //         console.log("Open")
-//     }else{
+//     } else {
 //         console.log("Close")
 //     }
 // }
-
-
-
 
 // if (hour <=21 && hour >= 10) {
 //     switch (day) {
@@ -657,22 +621,20 @@ Test data:
 //     console.log("CLOSED!")
 // }
 
-
 // if(gun=="Monday" && time>=10 && time<=21)   { console.log("open")}
 // else if(gun=="Tuesday" && time>=10 && time<=21)  { console.log("open")}
 // else if(gun=="Wednesday" && time>=10 && time<=21){ console.log("open")}
 // else if(gun=="Thursday" && time>=10 && time<=21) { console.log("open")}
 // else if(gun=="Friday" && time>=10 && time<=21)   { console.log("open")}
-// else                                             {console.log("close")} 
+// else                                             {console.log("close")}
 
 // ---------FUNCTION---------------------------------------------------
 
-function myFirstFunction(a) {
-    console.log("Hello World")
-}
+// function myFirstFunction(a) {
+//     console.log("Hello World")
+// }
 
-myFirstFunction(); // call,invoke,execute
-
+// myFirstFunction(); // call,invoke,execute
 
 // function juiceExtractor(fruit) {
 //     const juice = `This is ${fruit} juice`
@@ -689,11 +651,11 @@ myFirstFunction(); // call,invoke,execute
 
 // juiceExtractor("apple", "orange")
 
-//---- Function decleration 
+//---- Function decleration
 function calcAge(birthYear) {
     // const age = 2021 - birthYear
     // return age
-    return 2021 - birthYear
+    return 2021 - birthYear;
 }
 
 //console.log(calcAge(1965))
@@ -702,66 +664,99 @@ function calcAge(birthYear) {
 
 //---- Function Expression code
 const addition = function(a, b) {
-    return a + b
-}
+    return a + b;
+};
 
-const total = addition(1965, 1612737)
-console.log(total)
+const total = addition(1965, 1612737);
+console.log(total);
 
+// ---- Arrow Function
 
-// ---- Arrow Function 
+const calcAge2 = (birthYear) => 2021 - birthYear;
 
-const calcAge2 = birthYear => 2021 - birthYear
-
-console.log(calcAge2(2000))
+console.log(calcAge2(2000));
 
 const canDrive = (birthYear) => {
-    const age = 2021 - birthYear
-    const allowed = 18 - age
-    return `You can drive ${allowed} year later.`
-}
+    const age = 2021 - birthYear;
+    const allowed = 18 - age;
+    return `You can drive ${allowed} year later.`;
+};
 
-const result = canDrive(2006)
-console.log(result)
-
-
+const result = canDrive(2006);
+console.log(result);
 
 function hipotenus(a, b) {
-    const firstValue = exponentValue(a)
-    const secondValue = exponentValue(b)
-    const result = (firstValue + secondValue) ** (0.5)
-    return result
+    const firstValue = exponentValue(a);
+    const secondValue = exponentValue(b);
+    const result = (firstValue + secondValue) ** 0.5;
+    return result;
 }
 
 function exponentValue(value) {
-    return value ** 2
+    return value ** 2;
 }
 
-const hipoResult = hipotenus(7, 24)
-console.log(hipoResult)
+const hipoResult = hipotenus(7, 24);
+console.log(hipoResult);
 
 // -----------------------------------------------
 
-function average(a, b, c) {
+// function average(a, b, c) {
 
-    return (a + b + c) / 3
+//     return (a + b + c) / 3
 
-}
+// }
 
-const avgDolphin = average(96, 108, 89);
-console.log(avgDolphin);
+// const avgDolphin = average(96, 108, 89);
+// console.log(avgDolphin);
 
-const avgKoala = average(88, 91, 110);
-console.log(avgKoala);
+// const avgKoala = average(88, 91, 110);
+// console.log(avgKoala);
 
-function findWinner(avgDolphin, avgKoala) {
+// function findWinner(avgDolphin, avgKoala) {
 
-    if (avgDolphin > avgKoala) {
-        return `The winner is Dolphin`
-    } else {
-        return `The winner is Koala`
+//     if (avgDolphin > avgKoala) {
+//         return `The winner is Dolphin`
+//     } else {
+//         return `The winner is Koala`
+//     }
+
+// }
+
+// console.log(findWinner(avgDolphin, avgKoala));
+// ----------------------------------------------------------------------------------------------------------------------
+
+// 1.Take a positive number from user,
+// 2. Write a function that check whether  the number is "Armstrong" or not.
+
+// An n-digit number that is the sum of the nth powers of its digits is called an n-Armstrong number. Examples :
+// 371 =3 ** 3 + 7 ** 3 + 1 ** 3;
+// 9474 = 9 ** 4 + 4 ** 4 + 7 ** 4 + 4 ** 4;
+// 93084 = 9 ** 5 + 3 ** 5 + 0 ** 5 + 8 ** 5 + 4 **5.
+
+// P.S:  consider the negative, decimal and any entries other than numeric values then display a warning message to the user.
+
+const num = prompt("Please enter a number");
+
+if (num < 0) {
+    alert("Please enter a positive number");
+} else {
+    function armStrong(num) {
+        const sum = 0;
+        const number = num.toString(); // rakamı string e çeviriyor( 371 i '371' olarak)
+        const digits = number.split(""); // string rakamı (123) ü (1,2,3) diye ayırıyor
+
+        for (const i = 0; i < digits.length; i++) {
+            const value = parseInt(digits[i]);
+            const cube = Math.pow(value, 3);
+            // sayının her bir i' inci değerinin küpünü alıp çeviriyor ve üzerine ekleyerek topluyor
+            sum = sum + cube;
+        }
+        if (sum == num) {
+            return `${num} is an armstrong number`;
+        } else {
+            return `${num} is not an armstrong number`;
+        }
     }
-
 }
-
-console.log(findWinner(avgDolphin, avgKoala));
+console.log(armStrong(num));
