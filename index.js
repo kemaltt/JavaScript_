@@ -736,27 +736,197 @@ console.log(hipoResult);
 
 // P.S:  consider the negative, decimal and any entries other than numeric values then display a warning message to the user.
 
-const num = prompt("Please enter a number");
+// const num = prompt("Please enter a number");
 
-if (num < 0) {
-    alert("Please enter a positive number");
-} else {
-    function armStrong(num) {
-        const sum = 0;
-        const number = num.toString(); // rakamı string e çeviriyor( 371 i '371' olarak)
-        const digits = number.split(""); // string rakamı (123) ü (1,2,3) diye ayırıyor
+// if (num < 0 ) {
+//     alert("Please enter a positive number");
+// } else {
+//     function armStrong(num) {
+//         const sum = 0;
+//         const number = num.toString(); // rakamı string e çeviriyor( 371 i '371' olarak)
+//         const digits = number.split(""); // string rakamı (123) ü (1,2,3) diye ayırıyor
 
-        for (const i = 0; i < digits.length; i++) {
-            const value = parseInt(digits[i]);
-            const cube = Math.pow(value, 3);
-            // sayının her bir i' inci değerinin küpünü alıp çeviriyor ve üzerine ekleyerek topluyor
-            sum = sum + cube;
-        }
-        if (sum == num) {
-            return `${num} is an armstrong number`;
-        } else {
-            return `${num} is not an armstrong number`;
-        }
-    }
-}
-console.log(armStrong(num));
+//         for (const i = 0; i < digits.length; i++) {
+//             const value = parseInt(digits[i]);
+//             const cube = Math.pow(value, 3);
+//             // sayının her bir i' inci değerinin küpünü alıp çeviriyor ve üzerine ekleyerek topluyor
+//             sum = sum + cube;
+//         }
+//         if (sum == num) {
+//             return `${num} is an armstrong number`;
+//         } else {
+//             return `${num} is not an armstrong number`;
+//         }
+//     }
+// }
+// console.log(armStrong(num));
+
+// --------------------------------------------------
+//  
+
+
+
+
+// Find out if a given year is a “leap” year.----------------------------------------------------------------------
+// In the Gregorian calendar, three criteria must be taken into account to identify leap years:
+// The year must be evenly divisible by 4;
+// If the year can also be evenly divided by 100, it is not a leap year; unless...
+// The year is also evenly divisible by 400. Then it is a leap year.
+// According to these rules, the years 2000 and 2400 are leap years, while 1800, 1900, 2100, 2200, 2300, and 2500 are not the leap years.
+// Write a program that takes the year from user and gives output as “2020 is a leap year” or “2019 is not a leap year” .
+
+// const year = prompt("Please enter a Year")
+
+// function leapYear(year) {
+//     if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
+
+//         return `${year} is a leap year`
+//     } else {
+
+//         return `${year} is a not leap year`
+//     }
+
+// }
+
+// console.log(leapYear(2020));
+
+
+
+// ---------------------------------------------
+
+// let year = prompt("Please enter a Year")
+
+// if (year % 4 == 0 && year % 100 != 0) {
+
+//     console.log(`${year} is a leap year`)
+// } else if (year % 400 == 0) {
+//     console.log(`${year} is a leap year`)
+
+// } else {
+//     console.log(`${year} is a not leap year`)
+// }
+
+
+// ------------------------------------------String Methods---------------------------
+
+let text = "Her şey güzel olacak !"
+
+let len = text.length
+
+console.log("length " + len); // kaç haneden oluşuyor boşluk sayılır 21 karakter
+
+// slice(start,end)--------------------
+
+let firstPart = text.slice(8, 13) // 1.start '2. bitiş  (güzel yazar
+let secondPart = text.slice(8) // 8 den sonra hepsini yazar (güzel olacak !
+let thirdPart = text.slice(-14, -8) // sondan sayar
+
+console.log(firstPart); //güzel
+console.log(secondPart); //güzel olacak !
+console.log(thirdPart); //güzel
+
+// substring(start,end)----------------------(negativ kabul etmez)
+
+let part = text.substring(8, 13) // 1.start '2. bitiş  (güzel yazar
+
+console.log(part);
+
+// substr(start,lenght)-------------------------
+
+let subStr = text.substr(8, 7) // 8.sıradan sonra 7 haneli yazdırır (güzel o)
+console.log(subStr);
+
+// Split----------------------------------------------------
+
+let splittedPart = text.split(" ");
+let splittedPart1 = text.split("");
+
+
+console.log(splittedPart); //(5) ['Her', 'şey', 'güzel', 'olacak', '!']
+console.log(splittedPart1); //(22) ['H', 'e', 'r', ' ', 'ş', 'e', 'y', ' ', 'g', 'ü', 'z', 'e', 'l', ' ', 'o', 'l', 'a', 'c', 'a', 'k', ' ', '!']
+
+let text2 = "Turkey,Germany,USA,France"
+
+let splittedPart2 = text2.split(",");
+
+console.log(splittedPart2); //(4) ['Turkey', 'Germany', 'USA', 'France']
+console.log(splittedPart2[0]); //Turkey
+
+let splittedPart3 = text.split(""); // boşluk bırakmayınca tüm elemanları tek tek ayırıyor
+console.log(splittedPart3); //(22) ['H', 'e', 'r', ' ', 'ş', 'e', 'y', ' ', 'g', 'ü', 'z', 'e', 'l', ' ', 'o', 'l', 'a', 'c', 'a', 'k', ' ', '!']
+
+// Relace--------------------------------------------------------değiştirme,yeniden adlandırma
+
+let string = "Current euro currency is 15,22"
+
+let splitIt = string.split(" ");
+
+console.log(splitIt); //(5) ['Current', 'euro', 'currency', 'is', '15,22']
+
+let currency = splitIt[splitIt.length - 1]
+
+currency = currency.replace(",", ".") // ,ile . değiştirir
+
+console.log(currency); // 15.22
+
+let dolar = splitIt[splitIt.length - 4].replace("euro", "dolar")
+
+console.log(dolar); // dolar yazar
+
+string1 = string.replace("euro", "dolar");
+console.log(string1); //Current dolar currency is 15,22 yazar
+
+console.log(string1.replace("15,22", "15.22")); //Current dolar currency is 15.22
+
+// replaceAll-----
+
+console.log(text2.replaceAll(",", ".")); // Turkey.Germany.USA.France(virgülyerine nokta )
+
+// TRIM-----------------------baş ve sondaki boşluk alma
+
+console.log(string1.replace(" ", "")); //Currentdolar currency is 15,22(ilk boşluğu almak için)
+
+let string3 = "   Welcome to DGHome          "
+
+console.log(string3);
+console.log(string3.trim()); //Welcome to DGHome baive sondaki boşluğu aldı
+
+// INCLUDES----------------------------
+console.log(string3.includes("Welcome")); //true yazar 
+
+// INDEXOF--------------------------
+let string4 = "All is well !"
+
+let ind = string4.indexOf("l");
+console.log(ind); // 1 ilk l yi
+
+console.log(string4.lastIndexOf("l")); // 10 (10 . değeri gösterir)
+
+let ind1 = string4.indexOf("l", 5);
+console.log(ind1); // 5 inciindex ten sonraki 9. l yi gösterir
+
+let ind2 = string4.indexOf("l", ind + 1);
+console.log(ind2); // 2.index
+
+let ind3 = string4.indexOf("well");
+console.log(ind3); // 7 yazar well 7.index
+
+// Concat----------------------------------
+
+let s1 = "Hello "
+let s2 = "World"
+let s3 = s1.concat(s2)
+console.log(s3); //Hello World yazar
+
+// charAt-------------------------------------
+
+let car = s3.charAt(6);
+console.log(car); // W yazdırırı
+
+// toLowerCase/toUpperCase
+
+let low = s3.toLowerCase();
+console.log(low); //hello world
+
+let up = s3.toUpperCase();
+console.log(up); //HELLO WORLD
