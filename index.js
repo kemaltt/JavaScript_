@@ -855,7 +855,7 @@ console.log(splittedPart2[0]); //Turkey
 let splittedPart3 = text.split(""); // boşluk bırakmayınca tüm elemanları tek tek ayırıyor
 console.log(splittedPart3); //(22) ['H', 'e', 'r', ' ', 'ş', 'e', 'y', ' ', 'g', 'ü', 'z', 'e', 'l', ' ', 'o', 'l', 'a', 'c', 'a', 'k', ' ', '!']
 
-// Relace--------------------------------------------------------değiştirme,yeniden adlandırma
+// Replace--------------------------------------------------------değiştirme,yeniden adlandırma
 
 let string = "Current euro currency is 15,22"
 
@@ -885,7 +885,7 @@ console.log(text2.replaceAll(",", ".")); // Turkey.Germany.USA.France(virgülyer
 // TRIM-----------------------baş ve sondaki boşluk alma
 
 console.log(string1.replace(" ", "")); //Currentdolar currency is 15,22(ilk boşluğu almak için)
-
+console.log(string1.replaceAll(" ", "")); //Currentdolarcurrencyis15,22
 let string3 = "   Welcome to DGHome          "
 
 console.log(string3);
@@ -918,7 +918,7 @@ let s2 = "World"
 let s3 = s1.concat(s2)
 console.log(s3); //Hello World yazar
 
-// charAt-------------------------------------
+// charAt-------------------------------------karakter bulmak
 
 let car = s3.charAt(6);
 console.log(car); // W yazdırırı
@@ -930,3 +930,184 @@ console.log(low); //hello world
 
 let up = s3.toUpperCase();
 console.log(up); //HELLO WORLD
+
+// ARRAYS---------------------------------
+
+const student1 = "Muhlise"
+const student2 = "Utku"
+const student3 = "Kemal"
+
+const studentArray = ["Muhlise", "Utku", "Kemal", "Cengiz"]
+
+console.log(studentArray[0]); //Muhlise
+console.log(studentArray[3]); //Cengiz
+console.log(studentArray[5]); //undefined
+
+
+
+
+console.log(studentArray.length); // 4
+console.log(studentArray[studentArray.length - 1]); //Cengiz
+
+studentArray[2] = "Beyza"
+console.log(studentArray); //(4) ['Muhlise', 'Utku', 'Beyza', 'Cengiz']
+
+// -----BASIC ARRAY METHODS----------------------------
+// ADDING ELEMENT
+//push() sonuna atama
+
+studentArray.push("Ahmet")
+console.log(studentArray); // ['Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet']
+
+const newArray = studentArray.push("Hasan");
+console.log(newArray); // 6 uzunluğunu yazdırır
+console.log(studentArray); //['Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
+
+//unshift--------başa ekleme---------------
+
+studentArray.unshift("Sena");
+
+console.log(studentArray); //['Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
+
+studentArray.unshift("2021");
+console.log(studentArray); //['2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
+
+studentArray.unshift(['3']);
+console.log(studentArray); // [Array(1), '2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
+
+//REMOVE ELEMENT------------------------------------son elementi siler
+
+studentArray.pop();
+console.log(studentArray); //[Array(1), '2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet']
+const popped = studentArray.pop();
+console.log(popped); //Ahmet yazdı
+
+//push ve unshift te uzunluk döndürür
+
+//Shift----ilk elemanı siler
+
+studentArray.shift();
+console.log(studentArray); // ['2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz']
+const shifted = studentArray.shift();
+console.log(shifted); // 2021 yazdı
+
+//INDEXOF--------
+
+console.log(studentArray.indexOf("Muhlise")); // 1 yazdı muhlise 1.element
+
+studentArray.push("23");
+
+console.log(studentArray); //['Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', '23']
+console.log(studentArray.indexOf("23"));
+
+// INCLUIDES------------------
+
+console.log(studentArray.includes("Cengiz")); //true
+console.log(studentArray.includes("Ali")); //false
+
+// // INCLUDES 
+// console.log(studentArray.includes("Cengiz"))
+// console.log(studentArray.includes("Utku"))
+
+// // SPLICE 
+// /**
+//   splice(start, deleteCount)
+//   splice(start, deleteCount, item1)
+//  */
+
+// //   const spliced = studentArray.splice(2, 2)
+// //   console.log(spliced)
+//   console.log(studentArray)
+
+//   const spliced2 = studentArray.splice(0,2, "Ebuzer", "Cengiz", "Erhand")
+//   console.log(spliced2)
+//   console.log(studentArray)
+//   const spliced3 = studentArray.splice(2,0, "Hasan", "Muhlise")
+//   console.log(spliced3)
+//   console.log(studentArray)
+
+//   // SLICE 
+//   // slice(start, end) // end does not included
+//   const sliced = studentArray.slice(1,3)
+//   console.log(sliced)
+//   console.log(studentArray)
+
+
+// FizzBuzz 
+// boş array oluştu
+// fizzBuzz function yaz 
+// function her çağırıldığında 1 den başlayarak sırayla sayıları ekle
+// 3 ve 3 ün katları Fizz 5 ve 5 in katları Buzz 15 ve katları FizzBuzz yazacak
+
+// ------------------------------------ ARRAYS -------------------------------- //
+
+
+// ------------------------------------ OBJECTS -------------------------------- //
+const employeeArr = [
+    'John',
+    'Snow',
+    28,
+    'trainer'
+]
+
+// key-value pairs
+const empObj = {
+    firstName: 'John',
+    lastName: 'Snow',
+    age: 28,
+    job: 'trainer'
+}
+console.log(empObj)
+
+// DOT NOTATION - BRACKET NOTATION
+
+// DOT N.
+console.log(empObj.firstName)
+
+//BRACKET N.
+console.log(empObj['firstName'])
+
+nameKey = "Name"
+console.log(empObj['first' + nameKey])
+console.log(empObj['last' + nameKey])
+
+
+// const val = prompt('What do u want to know about John')
+
+// //console.log(empObj.val)
+// console.log(empObj[val])
+
+// empObj[val] ? console.log(empObj[val]) : console.log('Wrong Request')
+
+empObj.location = 'Germany'
+console.log(empObj)
+
+empObj['mail'] = "abc@mail.com"
+console.log(empObj)
+
+empObj['language'] = ['English', "Deutsch", "Spanish"]
+console.log(empObj)
+
+empObj['driveLicense'] = true
+console.log(empObj)
+
+
+const empObj2 = {
+    firstName: 'John',
+    lastName: 'Snow',
+    birthYear: 1990,
+    job: 'trainer',
+
+    // calcAge : function(birthYear){
+    //     return 2021 - birthYear
+    // }
+    calcAge: function() {
+        console.log("this: ", this)
+        return 2021 - this.birthYear
+    }
+}
+
+console.log(empObj2.calcAge())
+
+
+// ------------------------------------ OBJECTS -------------------------------- //
