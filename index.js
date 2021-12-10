@@ -815,7 +815,7 @@ let len = text.length
 
 console.log("length " + len); // kaç haneden oluşuyor boşluk sayılır 21 karakter
 
-// slice(start,end)--------------------
+// slice(start,end)--------------------silmek için
 
 let firstPart = text.slice(8, 13) // 1.start '2. bitiş  (güzel yazar
 let secondPart = text.slice(8) // 8 den sonra hepsini yazar (güzel olacak !
@@ -931,7 +931,9 @@ console.log(low); //hello world
 let up = s3.toUpperCase();
 console.log(up); //HELLO WORLD
 
-// ARRAYS---------------------------------
+// ------------------------------------ STRING METHODS -------------------------------- //
+
+// ------------------------------------ ARRAYS -------------------------------- //
 
 const student1 = "Muhlise"
 const student2 = "Utku"
@@ -950,10 +952,11 @@ console.log(studentArray.length); // 4
 console.log(studentArray[studentArray.length - 1]); //Cengiz
 
 studentArray[2] = "Beyza"
-console.log(studentArray); //(4) ['Muhlise', 'Utku', 'Beyza', 'Cengiz']
+console.log(studentArray); //(4) ['Muhlise', 'Utku', 'Beyza', 'Cengiz'] ,'kemal' yerine beyza yazmışoldu
 
-// -----BASIC ARRAY METHODS----------------------------
-// ADDING ELEMENT
+// //----- BASIC ARRAY METHODS/OPERATIONS
+// // ADDING ELEMENT 
+// // push() -> adds element at the and of the array
 //push() sonuna atama
 
 studentArray.push("Ahmet")
@@ -963,6 +966,8 @@ const newArray = studentArray.push("Hasan");
 console.log(newArray); // 6 uzunluğunu yazdırır
 console.log(studentArray); //['Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
 
+
+// // unshift() -> adds element as a first value of array
 //unshift--------başa ekleme---------------
 
 studentArray.unshift("Sena");
@@ -972,10 +977,15 @@ console.log(studentArray); //['Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahm
 studentArray.unshift("2021");
 console.log(studentArray); //['2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
 
+studentArray.unshift(true);
+console.log(studentArray); // [true, '2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
+
 studentArray.unshift(['3']);
 console.log(studentArray); // [Array(1), '2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet', 'Hasan']
 
 //REMOVE ELEMENT------------------------------------son elementi siler
+// // REMOVE ELEMENT
+// // pop() -> removes last element
 
 studentArray.pop();
 console.log(studentArray); //[Array(1), '2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', 'Ahmet']
@@ -984,6 +994,7 @@ console.log(popped); //Ahmet yazdı
 
 //push ve unshift te uzunluk döndürür
 
+// // shift() -> removes first element from array
 //Shift----ilk elemanı siler
 
 studentArray.shift();
@@ -998,7 +1009,7 @@ console.log(studentArray.indexOf("Muhlise")); // 1 yazdı muhlise 1.element
 studentArray.push("23");
 
 console.log(studentArray); //['Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', '23']
-console.log(studentArray.indexOf("23"));
+console.log(studentArray.indexOf("23")); //6
 
 // INCLUIDES------------------
 
@@ -1015,40 +1026,122 @@ console.log(studentArray.includes("Ali")); //false
 //   splice(start, deleteCount, item1)
 //  */
 
-// //   const spliced = studentArray.splice(2, 2)
-// //   console.log(spliced)
-//   console.log(studentArray)
+const spliced = studentArray.splice(2, 2) //  ['2021', 'Sena', 'Muhlise', 'Utku', 'Beyza', 'Cengiz', '23']
+console.log(spliced) //  ['Muhlise', 'Utku'] bunlrı çıktı
+console.log(studentArray) //['2021', 'Sena', 'Beyza', 'Cengiz', '23']
 
-//   const spliced2 = studentArray.splice(0,2, "Ebuzer", "Cengiz", "Erhand")
-//   console.log(spliced2)
-//   console.log(studentArray)
-//   const spliced3 = studentArray.splice(2,0, "Hasan", "Muhlise")
-//   console.log(spliced3)
-//   console.log(studentArray)
+const spliced2 = studentArray.splice(0, 2, "Ebuzer", "Cengiz", "Erhand")
+console.log(spliced2) //['2021', 'Sena'] bu ikisini aldı
+console.log(studentArray) // ['Ebuzer', 'Cengiz', 'Erhand', 'Beyza', 'Cengiz', '23'] 
+const spliced3 = studentArray.splice(2, 0, "Hasan", "Muhlise")
+console.log(spliced3) // []
+console.log(studentArray) //['Ebuzer', 'Cengiz', 'Hasan', 'Muhlise', 'Erhand', 'Beyza', 'Cengiz', '23'] 2.element cengizden sonra 
 
-//   // SLICE 
+//   // SLICE --------------------------------
 //   // slice(start, end) // end does not included
-//   const sliced = studentArray.slice(1,3)
-//   console.log(sliced)
-//   console.log(studentArray)
+const sliced = studentArray.slice(1, 3)
+console.log(sliced) //  ['Cengiz', 'Hasan']
+console.log(studentArray) // ['Ebuzer', 'Cengiz', 'Hasan', 'Muhlise', 'Erhand', 'Beyza', 'Cengiz', '23'] orjinali değiimedi.
 
 
-// FizzBuzz 
+// FizzBuzz -----------------------------------------------------------------------------------
 // boş array oluştu
 // fizzBuzz function yaz 
 // function her çağırıldığında 1 den başlayarak sırayla sayıları ekle
 // 3 ve 3 ün katları Fizz 5 ve 5 in katları Buzz 15 ve katları FizzBuzz yazacak
 
+
+// const fbArray = [];
+// let count = 1;
+
+// function fizzBuzz() {
+
+//     if (count % 3 == 0 && count % 5 == 0) {
+//         fbArray.push("fizzBuzz")
+
+//     } else if (count % 3 == 0) {
+//         fbArray.push("Fizz");
+
+//     } else if (count % 5 == 0) {
+//         fbArray.push("Buzz");
+//     } else {
+//         fbArray.push(count)
+//     }
+//     count++
+//     return fbArray
+// }
+
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+// console.log(fizzBuzz());
+
+
+// const fbArray = [];
+
+// for (let i = 1; i <= 100; i++) {
+
+//     if (i % 3 == 0 && i % 5 == 0) {
+//         fbArray.push("fizzBuzz")
+
+//     } else if (i % 3 == 0) {
+//         fbArray.push("Fizz");
+
+//     } else if (i % 5 == 0) {
+//         fbArray.push("Buzz");
+//     } else {
+//         fbArray.push(i)
+//     }
+
+// }
+// console.log(fbArray);
+
+
+// const fbArray = [];
+
+// function fizzBuzz() {
+
+//     for (let i = 1; i <= 100; i++) {
+
+//         if (i % 3 == 0 && i % 5 == 0) {
+//             fbArray.push("fizzBuzz")
+
+//         } else if (i % 3 == 0) {
+//             fbArray.push("Fizz");
+
+//         } else if (i % 5 == 0) {
+//             fbArray.push("Buzz");
+//         } else {
+//             fbArray.push(i)
+//         }
+
+//     }
+//     return fbArray
+// }
+// console.log(fizzBuzz());
+
 // ------------------------------------ ARRAYS -------------------------------- //
 
 
 // ------------------------------------ OBJECTS -------------------------------- //
-const employeeArr = [
-    'John',
-    'Snow',
-    28,
-    'trainer'
-]
+// const employeeArr = [
+//     'John',
+//     'Snow',
+//     28,
+//     'trainer'
+// ]
 
 // key-value pairs
 const empObj = {
@@ -1059,28 +1152,28 @@ const empObj = {
 }
 console.log(empObj)
 
-// DOT NOTATION - BRACKET NOTATION
+// // DOT NOTATION - BRACKET NOTATION
 
-// DOT N.
-console.log(empObj.firstName)
+// // DOT N.
+console.log(empObj.firstName) //John
 
-//BRACKET N.
-console.log(empObj['firstName'])
+// //BRACKET N.
+console.log(empObj['firstName']) // John
 
 nameKey = "Name"
 console.log(empObj['first' + nameKey])
 console.log(empObj['last' + nameKey])
 
-
+// Objenin içinde var olan birşeyi sorgulama-----------------------------------------
 // const val = prompt('What do u want to know about John')
 
-// //console.log(empObj.val)
+// console.log(empObj.val)
 // console.log(empObj[val])
 
 // empObj[val] ? console.log(empObj[val]) : console.log('Wrong Request')
-
-empObj.location = 'Germany'
-console.log(empObj)
+// ---------------------------------------------------------------------------
+empObj.location = 'Germany' // location ekleme
+console.log(empObj) //{firstName: 'John', lastName: 'Snow', age: 28, job: 'trainer', location: 'Germany'}
 
 empObj['mail'] = "abc@mail.com"
 console.log(empObj)
@@ -1111,3 +1204,138 @@ console.log(empObj2.calcAge())
 
 
 // ------------------------------------ OBJECTS -------------------------------- //
+
+//------------------------------------LOOPS-----------------------------------------//
+console.log("push up 1")
+console.log("push up 2")
+console.log("push up 3")
+console.log("push up 4")
+console.log("push up 5")
+console.log("push up 6")
+console.log("push up 7")
+console.log("push up 8")
+console.log("push up 9")
+console.log("push up 10")
+    // bunun yerine for ----------------------------------
+
+// FOR-----------------------------------------------
+
+for (let rep = 1; rep <= 10; rep++) {
+    // console.log("push up " + rep);
+    console.log(`push up ${rep}`)
+}
+
+
+const array = ["data1", "data2", "data3", "data4", "data5"]
+
+console.log(array[0]);
+console.log(array[1]);
+console.log(array[2]);
+
+
+for (let i = 0; i < array.length; i++) {
+
+    console.log(array[i]);
+}
+
+// Continue-Break--------------------------------------
+let evenNummers = [];
+
+for (let i = 0; i <= 100; i++) {
+    if (i % 2 != 0) continue
+    if (i == 52) break // 52 gördüğü anda çıkar
+    evenNummers.push(i)
+}
+console.log(evenNummers);
+
+for (let i = 1; i <= 3; i++) {
+    console.log(`----------------Exercises ${i}`);
+    for (let j = 1; j <= 5; j++) {
+        console.log(`repeat ${j}`)
+        for (let m = 1; m <= 3; m++) {
+            console.log(`break ${m} sec`)
+        }
+    }
+
+}
+// tersten çalışma 10 dan geriye
+const reverseArray = []
+for (let i = 10; i >= 0; i--) {
+    reverseArray.push(i)
+}
+console.log(reverseArray);
+
+
+// WHİLE--------------------------------------------------------
+let rep = 1;
+while (rep <= 10) { // treu ise
+
+    console.log(`push up ${rep}`)
+
+    rep++ // false olması lazım
+}
+
+
+let dice = Math.trunc(Math.random() * 6) + 1
+console.log(dice)
+
+
+while (dice != 6) {
+    console.log(`You rolled ${dice}`)
+    dice = Math.trunc(Math.random() * 6) + 1
+
+    console.log(dice == 6 ? "You win" : "Try again")
+}
+
+// // DO WHİLE
+
+
+let nummer = 1;
+
+let sum = 0
+
+do {
+    sum += nummer
+    nummer++
+} while (nummer <= 10)
+console.log("The total sum ", sum)
+
+/** 
+1.Take a positive number from user,
+2. Write a function that check whether  the number is "Armstrong" or not.
+
+An n-digit number that is the sum of the nth powers of its digits is called an n-Armstrong number. Examples :
+371 =3 ** 3 + 7 ** 3 + 1 ** 3;
+9474 = 9 ** 4 + 4 ** 4 + 7 ** 4 + 4 ** 4;
+93084 = 9 ** 5 + 3 ** 5 + 0 ** 5 + 8 ** 5 + 4 **5.
+
+P.S:  consider the negative, decimal and any entries other than numeric values then display a warning message to the
+*/
+
+
+// const num = prompt("Please enter a number");
+
+// if (num <= 0) {
+//     alert('Enter a correct number')
+
+
+// } else {
+
+
+//     function armStrong(num) {
+//         let len = num.length
+//         let sum = 0;
+//         let arr = num.split(""); // string rakamı (123) ü (1,2,3) diye ayırıyor
+
+//         for (let i = 0; i < arr.length; i++) {
+
+//             sum += arr[i] ** len
+//         }
+//         return sum == num ? `${num} is a Armstron` : `${num} is a not Armstron`
+//     }
+// }
+// console.log(armStrong(num));
+
+
+
+//------------------------------------LOOPS-----------------------------------------//
