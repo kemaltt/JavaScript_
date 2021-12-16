@@ -1315,7 +1315,7 @@ P.S:  consider the negative, decimal and any entries other than numeric values t
 
 // const num = prompt("Please enter a number");
 
-// if (num <= 0) {
+// if (num <= 0 || isNaN(num)) {
 //     alert('Enter a correct number')
 
 
@@ -1339,3 +1339,171 @@ P.S:  consider the negative, decimal and any entries other than numeric values t
 
 
 //------------------------------------LOOPS-----------------------------------------//
+
+//SORU 1
+// 1. Given an array of numbers, create a function which returns the same array but with each element’s index in the array added to itself. This means you add 0 to the number at index 0, add 1 to the number at index 1, etc
+
+// function addIndexes(array) {
+//     let arrayTwo = [];
+//     for (let i = 0; i < array.length; i++) {
+//         arrayTwo.push(array[i] + i)
+//     }
+//     return arrayTwo;
+
+// }
+
+// let argumentArray = [-25, -14, 5, 12]
+// let returnedArray = addIndexes(argumentArray);
+
+// console.log(returnedArray);
+
+
+function addIndexes(array) {
+
+    let arrayTwo = []
+    for (let i = 0; i < array.length; i++) {
+        arrayTwo.push(array[i] + i)
+
+    }
+    return arrayTwo;
+}
+
+console.log(addIndexes([-12, -5, 5, 3]))
+
+
+// -------------------------------
+//SORU 2
+//Create a function that takes two arguments. Both arguments are integers, a and b. Return true if one of them is 10 or if their sum is 10.
+
+function num(a, b) {
+
+    return (a == 10 || b == 10 || (a + b) == 10)
+        // if (a == 10 || b == 10 || (a + b) == 10) {
+
+    //     return true;
+    // } else {
+    //     return false
+    // }
+}
+console.log(num(12, 8)); //false
+console.log(num(2, 8)); //true
+
+//---------------------------------
+
+// SORU 3
+//     A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward
+//     Write a function to check if the sentence is palindrome 
+
+function isPalindrome(str) {
+
+    // var eliminateReg = /[\W_]/g;
+    // let lowerCaseStr = str.toLowerCase().replace(eliminateReg , '')
+    // let reversedStr = lowerCaseStr.split('').reverse().join('')
+    // return(lowerCaseStr === reversedStr)
+
+
+    var reg = /[\W_]/g;
+    let lowerCaseStr = str.toLowerCase().replace(reg, '')
+    let strLength = lowerCaseStr.length;
+
+
+    for (let i = 0; i < strLength / 2; i++) {
+        if (lowerCaseStr[i] !== lowerCaseStr[strLength - 1 - i]) {
+            return false;
+        }
+        return true;
+    }
+}
+console.log(isPalindrome("Ey edip Adana da pide ye")) // true
+console.log(isPalindrome("1221")) //true
+console.log(isPalindrome("enter a number ")) //false
+
+
+// function isPalindrome(str) {
+
+//     var eliminateReg = /[\W_]/g; //regex
+//     let lowerCaseStr = str.toLowerCase().replace(eliminateReg, '')
+//     let reversedStr = lowerCaseStr.split('').reverse().join('')
+//     return (lowerCaseStr == reversedStr)
+
+// }
+// console.log(isPalindrome("ey edip adanada pide ye"))
+//---------------------------------------------------------------------------------
+
+//Bugünün sorusu PRIME NUMBER !
+// — Take a number from user.
+// — Check if the number is positive integer
+// — Say user  whether the number is prime number or not.
+// P.S. : Prime Number -> Asal sayı :smiley:
+4
+// let number = prompt("enter a number")
+
+// number = Number(number)
+
+// if (number < 0 || isNaN(number) || Number.isInteger(number) == false) {
+
+//     alert `please enter integer`
+// } else {
+
+//     function primNum(number) {
+//         if (number < 2)
+//             return `${number}  is not a Prime Number`
+
+//         for (let i = 2; i < number; i++) {
+//             if (number % i == 0) {
+//                 return `${number}  is not a Prime Number`
+//             }
+//         }
+//         return `${number}  is a Prime Number`
+//     }
+
+// }
+// console.log(primNum(number));
+
+// -----------------------------------------------------------------------------------
+
+// Write a function that takes all even-indexed characters and odd-indexed characters from a string and concatenates them together.
+// e.g:
+// indexShuffle("abcd") ➞ "acbd"
+// "ac" (even-indexed) + "bd" (odd-indexed)
+// output : "acbd"
+
+let firstVal = prompt("Enter a value")
+
+function val(firstVal) {
+
+    let secondVal = firstVal.split("");
+    let evenIndex = []
+    let oddIndex = []
+
+
+    for (let i = 0; i < secondVal.length; i++) {
+
+        if (i % 2 == 0) {
+            evenIndex.push(firstVal[i]);
+        } else {
+            oddIndex.push(firstVal[i]);
+        }
+    }
+    let newVal = evenIndex.join("") + oddIndex.join("")
+    return newVal
+}
+console.log(val(firstVal));
+
+
+// let val
+// val = prompt("Enter a value")
+// orderedVal(val)
+
+// function orderedVal(val) {
+//     let arrVal = val.split("")
+//     let arrEven = [],
+//         arrOdd = []
+//     for (let i = 0; i < arrVal.length; i++) {
+//         i % 2 == 0 ? arrEven.push(arrVal[i]) : arrOdd.push(arrVal[i])
+//     }
+//     let arrEvenStr = arrEven.join("")
+//     let arrOddStr = arrOdd.join("")
+//     let newVal = arrEvenStr + arrOddStr
+//     return console.log(newVal);
+// }
