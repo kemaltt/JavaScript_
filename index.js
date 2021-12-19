@@ -1460,6 +1460,34 @@ console.log(isPalindrome("enter a number ")) //false
 // }
 // console.log(primNum(number));
 
+//PRIME NUMBER 
+
+// let number = prompt("Please enter a number: ")
+// alert("Alert")
+// // console.log(typeof number)
+// // console.log(Number(number))
+// number = Number(number)
+// // console.log(Number.isInteger(number))
+// // console.log(typeof number)
+// if(number <= 0 || Number.isInteger(number) == false || isNaN(number)) alert("Please enter a positive integer")
+
+// function isPrime(num){
+//   if(num == 1){
+//     return `${num} is not a Prime Number`
+//   }else if(num == 2){
+//     return `${num} is a Prime Number`
+//   } else {
+//     for(let i = 2; i < num; i++){
+//       if(num % i == 0){
+//         return `${num} is not a Prime Number`
+//       }
+//     }
+//     return `${num} is a Prime Number`
+//   }
+// }
+
+// console.log(isPrime(number))
+
 // -----------------------------------------------------------------------------------
 
 // Write a function that takes all even-indexed characters and odd-indexed characters from a string and concatenates them together.
@@ -1468,27 +1496,27 @@ console.log(isPalindrome("enter a number ")) //false
 // "ac" (even-indexed) + "bd" (odd-indexed)
 // output : "acbd"
 
-let firstVal = prompt("Enter a value")
+// let firstVal = prompt("Enter a value")
 
-function val(firstVal) {
+// function val(firstVal) {
 
-    let secondVal = firstVal.split("");
-    let evenIndex = []
-    let oddIndex = []
+//     let secondVal = firstVal.split("");
+//     let evenIndex = []
+//     let oddIndex = []
 
 
-    for (let i = 0; i < secondVal.length; i++) {
+//     for (let i = 0; i < secondVal.length; i++) {
 
-        if (i % 2 == 0) {
-            evenIndex.push(firstVal[i]);
-        } else {
-            oddIndex.push(firstVal[i]);
-        }
-    }
-    let newVal = evenIndex.join("") + oddIndex.join("")
-    return newVal
-}
-console.log(val(firstVal));
+//         if (i % 2 == 0) {
+//             evenIndex.push(firstVal[i]);
+//         } else {
+//             oddIndex.push(firstVal[i]);
+//         }
+//     }
+//     let newVal = evenIndex.join("") + oddIndex.join("")
+//     return newVal
+// }
+// console.log(val(firstVal));
 
 
 // let val
@@ -1507,3 +1535,31 @@ console.log(val(firstVal));
 //     let newVal = arrEvenStr + arrOddStr
 //     return console.log(newVal);
 // }
+// -------------------------------------------------------------------------
+// Bugunün sorusu gelsin o zaman ;
+// Create a function that takes a number as an argument.
+// Add up all the numbers from 1 to the number you passed to the function.
+// For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+
+// let number = prompt("Enter a number")
+
+// function addNum(number) {
+//     let total = 0;
+
+//     for (let i = 1; i <= number; i++) {
+//         total = (number * (number + 1)) / 2;
+//     }
+//     return total;
+// }
+// console.log(addNum(number));
+
+let number = prompt("Enter a number")
+
+function numSum(number) {
+    let sum = 0;
+    for (i = 0; i <= number; i++) {
+        sum += i;
+    }
+    return sum
+}
+console.log(numSum(number));
