@@ -21,15 +21,13 @@
                         <form class="requires-validation" novalidate>
                             <div id="first-three">
                                 <div class="col-md-12">
-                                    <input id="first-name" type="text" name="name" placeholder="First Name" value="Utku" required maxlength="40" />
+                                    <input type="text" name="name" id="first-name" placeholder="First Name" required />
                                 </div>
-
-                                <span id="char-count"></span>
 
                                 <div class="col-md-12">
-                                    <input id="last-name" class="form-control" type="text" name="name" placeholder="Last Name" required />
+                                    <input id="last-name" class="form-control" type="text" name="name" placeholder="Last Name" required max-length="40" />
                                 </div>
-
+                                <span id="char-count"></span>
                                 <div class="col-md-12">
                                     <input id="email" class="form-control" type="email" name="email" placeholder="E-mail Address" required />
                                 </div>
@@ -37,7 +35,7 @@
 
                             <div class="col-md-12">
                                 <select id="job-list" class="form-select mt-3" required>
-                    <!-- <option  selected disabled value="">Position</option>
+                    <!-- <option selected disabled value="">Position</option>
                     <option value="jweb">Junior Web Developer</option>
                     <option value="sweb">Senior Web Developer</option>
                     <option value="pmanager">Project Manager</option> -->

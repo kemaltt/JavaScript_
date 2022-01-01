@@ -201,7 +201,16 @@ let jobList = document.getElementById("job-list")
 // }
 
 //yada--for each kullanımı ile
-positionDiv.forEach(element => jobList.innerHTML += `<option> ${element}</option>`)
+positionDiv.forEach(element => jobList.innerHTML += `<option value='${element}'> ${element}</option>`)
+
+//change event-------------------------------------
+const position = document.getElementById('position')
+
+jobList.addEventListener("change", function() {
+    position.innerText = `you selected ${jobList.value}`
+})
+
+
 
 
 // ---styling
@@ -221,36 +230,31 @@ positionDiv.forEach(element => jobList.innerHTML += `<option> ${element}</option
 // `
 
 
+// -----------------------------------------------------------------------------
 
 
 
+const lstName = document.getElementById("last-name")
+const charCount = document.getElementById("char-count")
+const maxLenght = lstName.getAttribute("max-length")
+
+const showRemaninChar = () => {
+    // console.log(lstName.value.length)
+    // const val = lastName.value
+    // charCount.innerText = lastName.value.length + "/" + maxLenght
+    if (lstName.value.length == 0) {
+        charCount.style.display = "none"
+    } else {
+        // console.log("else")
+        charCount.style.display = "inline"
+        charCount.innerText = lstName.value.length + "/" + maxLenght
+    }
+}
+
+lastName.addEventListener("keyup", showRemaninChar)
 
 
 
-
-
-
-// const lstName = document.getElementById('last-name');
-// const charCount = document.getElementById('char-count')
-// const maxLength = lstName.getAttribute("max-length")
-
-// const showRemaninChar = () => {
-
-//     console.log(lstName.value.length);
-
-//     charCount.innerText = lstName.value.length + "/" + maxLength
-// }
-
-// lstName.addEventListener('keyup', showRemaninChar)
-
-// let jobList = document.getElementById("job-list")
-// console.log(jobList);
-
-// const position = document.getElementById("position")
-
-// jobList.addEventListener("change", function() {
-//     position.innerText = `You selected ${jobList.value}`
-// })
 
 
 
@@ -258,7 +262,9 @@ positionDiv.forEach(element => jobList.innerHTML += `<option> ${element}</option
 // --------------Events-----------------------------------------------
 
 // load-onload-------------------------
-// window.onload(){
+
+
+// window.onload()=>{
 
 // }
 

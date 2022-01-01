@@ -9,7 +9,8 @@ const addListElement = () => {
         const listElement = document.createElement("li")
         const content = document.createElement("span")
         content.setAttribute("class", "list-element")
-        content.textContent = val
+        content.textContent = val //innerText de olabilir
+
         const deleteButton = document.createElement("span")
         deleteButton.setAttribute("class", "delete-button")
         deleteButton.textContent = "delete"
@@ -24,14 +25,14 @@ const addListElement = () => {
         Array.from(deleteButtons).forEach(function(btn) {
             btn.addEventListener("click", function(e) {
                 console.log(e)
-                const li = e.target.parentElement
+                const li = e.target.parentElement // hangi element olduğunu bulmak için
                 li.remove()
             })
         })
     } else {
         alert("Please enter a valid value")
     }
-    input.value = ""
+    input.value = "" //add butona basınca text i sıfırlıyor
 }
 
 addButton.addEventListener("click", addListElement)
