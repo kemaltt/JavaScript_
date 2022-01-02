@@ -109,7 +109,7 @@ console.log(myMap.has('a')); // true
 console.log(myMap.has('b')); // false çünk,b value
 console.log(myMap.has('1')); // false çünk, sildik
 
-// içine ekleme 
+// içine ekleme -----set()----------------------------------------
 
 console.log(myMap.set(3, 5)); //Map(3) {'a' => 'b', ƒ => 'a', 3 => 5}
 
@@ -124,3 +124,48 @@ for (let [key, val] of myMap.entries()) console.log([key, val]); //(2) ['a', 'b
 // yada 
 
 myMap.forEach((val, key) => console.log(val, key)); // b a  a () => console.log('a')  5 3
+
+// SET------------------new Set()-----------------------------------------------------------------
+
+const mySet = new Set()
+
+console.log(mySet); //Set(0) {size: 0}
+
+const arr = [1, 2, 3]
+    // console.log(arr);
+
+const newSet = new Set(arr);
+console.log(newSet);
+
+//  yada-------------------------------------------
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+console.log(mySet); //Set(2) {1, 2}
+
+// birden fazla value yazmaz---------
+
+const arr2 = [1, 2, 3, 2, 1, 3, 4, 5, 4, 5]
+
+const newSet2 = new Set(arr2);
+console.log(newSet2); //Set(5) {1, 2, 3, 4, 5} tekrar edenler yazmaz
+// ------------------------------------------------------------------------------
+
+console.log(newSet.delete(1)); // true yazar=> 1 vardı ve sildi
+console.log(newSet); //Set(2) {2, 3}
+console.log(newSet.delete(5)); // false yazar=> çünki 5 yoktu
+
+// Obje koymak için---------------------------------------
+
+mySet.add({ a: 1, b: 2 })
+console.log(mySet); //Set(4) {1, 2, 3, {…}}  value: {a: 1, b: 2}
+
+console.log(mySet.has(1)); //true
+
+// ---length almak için------------------------------
+
+console.log(mySet.size); // 4 
+
+for (let key of mySet) console.log(key); // 1 2 3 {a: 1, b: 2} getirdi
+
+mySet.forEach((el) => console.log(el)) // 1 2 3 {a: 1, b: 2} getirdi
